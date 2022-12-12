@@ -1,0 +1,122 @@
+@font-face {
+  font-family: Rubik;
+  src: url(rubik.ttf) format("truetype");
+}
+
+html, body {
+  font-family: Rubik;
+  font-weight: 700;
+  background-color: #2E3440;
+  color: #eceff4;
+}
+
+p {
+  font-size: 150%;
+  text-align: center;
+}
+
+.button {
+  width: 10%;
+  padding: 8%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  background-color: #3B4252;
+  user-select: none;
+}
+
+.button:hover {
+  background-color: #8FBCBB;
+}
+
+#title {
+  font-weight: 500;
+  font-size: 280%;
+  text-align: center;
+}
+
+#objDiv {
+  position: absolute;
+  left: 35.5%;
+  width: 25%;
+  padding: 2%;
+}
+
+#objDiv:hover {
+  transform: scale(1.1);
+}
+
+#coins {
+  font-weight: 600;
+  margin-top: 0%;
+  margin-left: 0%;
+  text-align: left;
+}
+
+#credits {
+  position: absolute;
+  bottom: 0.5%;
+  right: 0.5%;
+  padding-bottom: 0%;
+  margin: 0%;
+  font-size: 12pt;
+  color: #4C566A;
+  user-select: none;
+}
+
+#reset {
+  position: absolute;
+  bottom: 0.5%;
+  left: 0.5%;
+  padding-bottom: 0%;
+  margin: 0%;
+  font-size: 12pt;
+  color: #4C566A;
+  user-select: none;
+}
+
+#tutorial {
+  position: absolute;
+  left: 60%;
+  top: 35%;
+}
+
+#tutorial-text {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+}
+
+#boostDiv {
+  position: absolute;
+  left: 10px;
+  bottom: 10%;
+}
+
+#shopDiv {
+  position: absolute;
+  right: 10px;
+  bottom: 10%;
+}
+
+#upgDiv {
+  position: absolute;
+  left: 37%;
+  bottom: 10%;
+}
+
+#coinsDiv {
+  position: absolute;
+  left: 5%;
+  top: 25%;
+  width: 30%;
+  height: 40%;
+}
+
+#boost #shop #upgrade {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#loading {
+  background: #2E3440;
+}
