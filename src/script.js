@@ -149,16 +149,17 @@ function mouseOutUpg() {
 function createObjects() {
   for (let i = 0; i < stages.length; i++) {
     if (getObjDiv.innerHTML === "") {
-      getObjDiv.innerHTML = "<img src=\"src/stages/" + stages[i] + ".png\" class=\"object\" id=\"" + stages[i] + "\" style=\"display: inline-block; width: 100%;\">";
+      getObjDiv.innerHTML = "<img src=\"src/stages/" + stages[i] + ".png\" class=\"object\" id=\"" + stages[i] + "\" style=\"display: block; width: 100%;\">";
     } else {
-      getObjDiv.innerHTML = getObjDiv.innerHTML += "<img src=\"" + stages[i] + "\" class=\"object\" id=\"" + stages[i] + "\" style=\"display: none; width: 100%;\">"
+      getObjDiv.innerHTML = getObjDiv.innerHTML += "<img src=\"src/stages/" + stages[i] + ".png\" class=\"object\" id=\"" + stages[i] + "\" style=\"display: none; width: 100%;\">"
     }
   }
 }
 
-function changeObj(file, alt) {
-  getObj.src = file;
-  getObjDiv.alt = alt;
+function changeObj() {
+  document.getElementById(stages[currentStage - 1]).style = "display: none; width: 100%";
+  document.getElementById(stages[currentStage]).style = "display: block; width: 100%";
+  getObjDiv.alt = stages[currentStage];
 }
 
 function altCoins() {
@@ -285,14 +286,14 @@ function upgrade() {
         buy(((currentStage + 2) ** 2) ** (currentStage + 1) + 6);
         currentStage++;
         mouseOverUpg();
-        changeObj(chooseObjFileByNum(currentStage), stages[currentStage]);
+        changeObj(chooseObjFileByNum(stages[currentStage]));
       } else console.log("Not enough coins!")
     } else {
       if (coins > BigInt(((currentStage + 2) ** 2) ** (currentStage + 1) + 6 - 1)) {
         buy(((currentStage + 2) ** 2) ** (currentStage + 1) + 6);
         currentStage++;
         mouseOverUpg();
-        changeObj(chooseObjFileByNum(currentStage), stages[currentStage]);
+        changeObj();
       } else console.log("Not enough coins!")
     }
   } else console.log("Stage Limit Reached! (For Now!)")
